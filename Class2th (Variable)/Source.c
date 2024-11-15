@@ -64,6 +64,9 @@ void main()
 
 #pragma endregion
 
+	// 첫 번째 비트는 부호를 나타내며,
+	// 첫 번째 비트가 1이면 음수를 나타냄
+
 #pragma endregion
 
 }

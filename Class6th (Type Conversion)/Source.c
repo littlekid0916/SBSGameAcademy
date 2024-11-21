@@ -54,6 +54,57 @@ void main()
 
 #pragma endregion
 
+#pragma region do while문
+	// 조건과 상관없이 한 번의 작업을 수행한 다음 조건에 따라 명령문을 실행하는 반복문
+	// int connection = 0;
+	// do
+	// {
+	// 	printf("Connection...");
+	// }
+	// while (connection > 0);
+
+#pragma endregion
+
+#pragma region continue문
+	// 해당 조건문만 실행되지 않고 반복문은 이어서 실행하는 제어문
+	// for (int i = 1; i <= 10; i++)
+	// {
+	// 	if (i % 3 == 0) continue;
+	// 	printf("%d\n",i);
+	// }
+
+#pragma endregion
+
+#pragma region 단축 평가 계산
+	// 계산을 진행하는 도중에 결과가 이미 확정된 경우 나머지 계산하는 과정을 생략하는 평가
+	// int x = 0;
+	// int y = 0;
+	// int z = 0;
+	// if (x == 0 && y++)
+	// {
+	// 	printf("Short Circuit\n");
+	// }
+	// if (z != 0 || y++)
+	// {
+	// 	printf("OR Operator\n");
+	// }
+	// printf("y의 값 : %d\n", y);
+
+#pragma endregion
+
+#pragma region (2)중 for문
+	// for (int i = 0; i < 3; i++)
+	// {
+	// 	printf("i의 값 : %d\n", i);
+	// 	for (int j = 0; j < 3; j++)
+	// 	{
+	// 		printf("j의 값 : %d\n", j);
+	// 	}
+	// 	printf("\n");
+	// }
+
+#pragma endregion
+
 #pragma endregion
 
 }

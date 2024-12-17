@@ -1,36 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\littl\\Desktop\\SBSGameAcademy\\Program\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{50CCED68-F8B0-4DEF-8649-B2545EE4F303}|..\\Class11th (Dynamic Allocation)\\Class11th (Dynamic Allocation).vcxproj|C:\\Users\\littl\\Desktop\\SBSGameAcademy\\Class11th (Dynamic Allocation)\\Source.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 238,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Source.c",
-              "DocumentMoniker": "C:\\Users\\littl\\Desktop\\SBSGameAcademy\\Class11th (Dynamic Allocation)\\Source.c",
-              "RelativeDocumentMoniker": "..\\Class11th (Dynamic Allocation)\\Source.c",
-              "ToolTip": "C:\\Users\\littl\\Desktop\\SBSGameAcademy\\Class11th (Dynamic Allocation)\\Source.c",
-              "RelativeToolTip": "..\\Class11th (Dynamic Allocation)\\Source.c",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADYAAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-12-13T16:07:03.563Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

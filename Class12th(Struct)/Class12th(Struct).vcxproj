@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{a53a285b-0371-45b6-bd19-03a853b3665e}</ProjectGuid>
-    <RootNamespace>Class9thArrangement</RootNamespace>
+    <ProjectGuid>{74ee43a4-e164-467a-8bb2-5e1dea3135d0}</ProjectGuid>
+    <RootNamespace>Class12thStruct</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -128,9 +128,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Calculator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

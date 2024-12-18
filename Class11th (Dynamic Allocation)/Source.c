@@ -1,105 +1,146 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 
-struct GameObject
+int count;
+
+int stage = 1;
+
+void Clear()
 {
-	char grade;
-	int health;
-	double attack;
+	stage += 1;
+}
 
-	// 구조체 크기의 경우 멤버 변수의 순서에 따라 메모리의 크기가 다르게 설정될 수 있으며,
-	// 구조체 크기를 결정하는 형태는 기본 자료형으로만 구성되어 있다
-};
-
-struct Vector2
+void Increase()
 {
-	float x;
-	float y;
-};
+	static int score = 0;
+	score++;
+	printf("score : %d\n", score);
+}
 
-struct Node
+void main()
 {
-	int data;
-	struct Node* next;
-};
+#pragma region 메모리
 
-int main()
-{
-#pragma region 구조체
-	// 여러개의 변수를 하나의 집합으로 구조화한 다음 하나의 객체를 생성하는 것
-	// struct GameObject gameObject;
-	// 
-	// gameObject.grade = 'A';
-	// gameObject.health = 75;
-	// gameObject.attack = 5.5f;
-	// 
-	// printf("GameObject Grade : %c\n", gameObject.grade);
-	// printf("GameObject health : %d\n", gameObject.health);
-	// printf("GameObject attack : %f\n", gameObject.attack);
-
-	// 구조체를 선언하기 전에 구조체는 메모리 공간이 생성되지 않으므로,
-	// 구조체 내부에 있는 데이터를 초기화할 수 없다
+#pragma region CODE 영역
+	// 프로세스가 실행할 코드와 매크로 상수가 기계어 형태로 저장되는 공간
 
 #pragma endregion
 
-#pragma region 바이트 패딩
-	// 멤버 변수를 메모리에서 cpu로 읽을 때 한 번에 읽을 수 있도록,
-	// 컴파일러가 레지스터의 블록에 맞추어 바이트를 패딩해주는 최적화 작업
+#pragma region DATA 영역
+	// 전역 변수와 정적 변수가 저장되는 공간
 
-	// struct GameObject object = {'C', 30, 3.25};
-	// printf("GameObject의 크기 : %d\n", sizeof(object));
-
-	// 구조체의 크기는 구조체를 구성하는 멤버중에 크기가 가장 큰 자료형의 배수가 되도록 정렬
 #pragma endregion
 
-#pragma region 두 점 사이의 거리
-	// struct Vector2 character = { 0, 0 };
-	// struct Vector2 slime = { 1.75f, 1.25f };
-	
-	// double x = character.x - slime.x;
-	// double y = character.y - slime.y;
-	// double distance = sqrt(pow(x, 2) + pow(y, 2));
-	
-	// if (distance >= 3.0f)
+#pragma region BSS 영역
+	// 초기화 되지 않은 전역 변수가 저장되는 공간
+
+#pragma endregion
+
+#pragma region STACK 영역
+	// 함수의 호출과 관계되는 지역 변수와 매개 변수가 저장되는 영역
+
+#pragma endregion
+
+#pragma region HEAP 영역
+	// 사용자가 직접 할당하는 메모리 공간
+
+#pragma endregion
+
+#pragma endregion
+
+#pragma region 지역 변수
+	// 함수 내부에 선언된 변수로 함수 내부에서만 사용 가능하며,
+	// {}를 벗어나는 시점에 메모리가 해제되는 특징을 가지고 있는 변수
+
+	// int x = 10;
+
 	// {
-	// 	printf("이동 상태\n");
-	// }
-	// else if (distance < 3.0)
-	// {
-	// 	printf("공격 상태\n");
+	// 	int x = 20;
+	// 	printf("x의 값 : %d\n", x);
 	// }
 
+	// printf("x의 값 : %d\n", x);
+
 #pragma endregion
 
-#pragma region 자기 참조 구조체
-	// 구조체 내부에 자기 자신의 자료형을 멤버 변수로 가지고 있는 구조체
-	// struct Node* node1 = malloc(sizeof(struct Node));
-	// struct Node* node2 = malloc(sizeof(struct Node));
-	// struct Node* node3 = malloc(sizeof(struct Node));
+#pragma region 전역 변수
+	// 함수 외부에서도 접근이 가능하며, 프로그램이 실행될 때 메모리에서 생성되고,
+	// 프로그램이 종료되어야만 메모리에서 사라지는 특징을 가지고 있는 변수
+
+	// Clear();
+	// Clear();
+	// Clear();
+
+	// printf("stage의 값 : %d\n", stage);
+
+	// printf("count의 값 : %d\n", count);
+
+#pragma endregion
+
+#pragma region 정적 변수
+	// 지역 변수와 전역 변수의 특성을 가지고 있으며, 프로그램이 실행될 때
+	// 단 한 번만 초기화가 이루어지며, 프로그램이  실행될 때 메모리에 생성되고
+	// 프로그램이 종료 되어야만 메모리에서 해제되는 특징을 가지고 있는 변수
+
+	// Increase();
+	// Increase();
+	// Increase();
+
+#pragma endregion
+
+#pragma region 동적 할당
+	// 프로그램을 실행 중에 필요한 만큼 메모리를 할당하는 작업
+	// int* reference = (int*)malloc(sizeof(int));
+	// *reference = 100;
+	// printf("reference가 가리키는 값 : %d\n", *reference);
+
+	// 동적할당은 실행 시간에 가변적으로 메모리의 크기를 변경시킬 수 있으며,
+	// 동적으로 메모리의 크기를 할당할 때 바이트 단위로 지정한다
+
+	// free(reference);
+
+	// 동적으로 할당한 메모리는 힙 영역에 보관되어 있으므로
+	// 사용이 끝나면 직접 해제를 해주어야 함
+
+#pragma endregion
+
+#pragma region 허상 포인터
+	// 이미 해제된 메모리 영역을 가리키는 포인터
+
+	// float* pointer = malloc(sizeof(float));
+	// *pointer = 37.5f;
+	// printf("pointer가 가리키는 값 : %f\n", *pointer);
+	// free(pointer);
+	// pointer = NULL;
+	// printf("pointer가 가리키는 값 : %f\n", *pointer);
+	// *pointer = 12.5f;
+
+#pragma endregion
+
+#pragma region 동적 배열
+	// int* ptr = calloc(3, sizeof(int));
 	// 
-	// node1->data = 10;
-	// node2->data = 20;
-	// node3->data = 30;
+	// printf("ptr의 값 : %p\n", ptr);
 	// 
-	// node1->next = node2;
-	// node2->next = node3;
-	// node3->next = NULL;
-	// 
-	// struct Node* currentNode = NULL;
-	// currentNode = node1;
-	// 
-	// while (currentNode != NULL)
+	// for (int i = 0; i < 3; i++)
 	// {
-	// 	printf("%d ", currentNode->data);
-	// 	currentNode = currentNode->next;
+	// 	ptr[i] = (1 + i) * 10;
+	// 	printf("ptr[%d] = %d\n", i, ptr[i]);
 	// }
 	// 
-	// free(node1);
-	// free(node2);
-	// free(node3);
+	// free(ptr);
+	// 
+	// ptr = calloc(5, sizeof(int));
+	// 
+	// printf("ptr의 값 : %p\n", ptr);
+	// 
+	// for (int i = 0; i < 5; i++)
+	// {
+	// 	printf("ptr[%d] = %d\n", i + 1, ptr[i]);
+	// }
+	// 
+	// free(ptr);
 
 #pragma endregion
 
-	return 0;
 }

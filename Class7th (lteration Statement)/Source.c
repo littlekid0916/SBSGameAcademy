@@ -2,122 +2,108 @@
 
 void main()
 {
-#pragma region 주소 연산자
-	// 변수의 주소 값을 반환하는 연산자
-	// 데이터의 주소 값은 해당 데이터가 저장된 메모리의 시작 주소를 의미,
-	// 메모리의 공간은 1byte의 크기로 나누어 표현함
-	
-	// int data = 10;
-	// printf("data변수의 주소 : %p\n", &data);
+#pragma region 반복문
+	// 프로그램 내에서 특정한 작업을 반복적으로 수행하는 명령문
+
+#pragma region 증감 연산자
+	// 피연산자를 하나씩 증가시키거나 감소시킬 때 사용하는 연산자
+
+	// 전위 증감 연산자는 변수의 값을 증감시킨 후에 연산을 수행함
+	// int x = 0;
+	// int vectorX = ++x;
+	// printf("전위 증가한 x의 값 : %d\n", x);	// 1
+	// printf("vectorX의 값 : %d\n", vectorX);	// 1
+	// 
+	// vectorX = --x;
+	// printf("전위 감소한 x의 값 : %d\n", x);	// 0
+	// printf("vectorX의 값 : %d\n", vectorX);	// 0
+
+	// 후위 증감 연산자는 연산을 수행한 다음 변수의 값을 증감시킴
+	// int y = 0;
+	// int vectorY = y++;
+	// printf("후위 증가한 y의 값 : %d\n", y);	// 1
+	// printf("vectorY의 값 : %d\n", vectorY);	// 0
+	// 
+	// vectorY = y--;
+	// printf("후위 감소한 y의 값 : %d\n", y);	// 0
+	// printf("vectorY의 값 : %d\n", vectorY);	// 1
 
 #pragma endregion
 
-#pragma region scanf 함수
-	// 표준 입력 함수로 여러 종류의 데이터를 다양한 서식에 맞추어 입력해주는 함수
-	
-	// int score = 0;
-
-	// 표준 입력 함수는 입력을 수행할 때까지 다음 작업으로 넘어갈 수 없다
-	// scanf_s("%d", &score);
-
-	// 버퍼는 데이터가 이동할 때 임시로 저장되는 공간
-	// 서식 지정자에 따라 입력할 수 있는 데이터의 범위도 결정
-	// printf("score변수의 값 : %d\n", score);
-
-	// 표준 입력 함수로 데이터를 입력하게 되면 버퍼에 데이터를 보관했다가
-	// 입력하는 순간 버퍼 안의 내용을 프로그램에 전송
-
-#pragma endregion
-
-#pragma region Star
-	// int input;
-	// scanf_s("%d", &input);
-	// for (int i = 0; i < input; i++)
+#pragma region for문
+	// 초기식을 연산하여 조건식의 결과에 따라 특정한 횟수만큼 반복하는 반복문
+	// for문의 경우 조건이 끝나는 형태와 반대로 초기식을 연산하게 되면,
+	// 조건이 일치하지 않아 계속 반복적으로 실행되는 문제가 발생
+	// for (int i = 0; i < 5; i++)
 	// {
-	// 	for (int j = 0; j <= i; j++)
+	// 	printf("Hello\n");
+	// }
+
+#pragma endregion
+
+#pragma region while문
+	// 특정 조건을 만족할 때까지 계속해서 주어진 명령문을 실행하는 반복문
+	// while문의 경우 위에서 아래로 실행,
+	// 아래에 있는 명령문의 실행이 다 끝나면 다시 위에 있는 명령문으로 돌아가서 실행됨
+	// int i = 0;
+	// while (i < 5)
+	// {
+	// 	printf("%d\n", i + 1);
+	// 	i++;
+	// }
+
+#pragma endregion
+
+#pragma region do while문
+	// 조건과 상관없이 한 번의 작업을 수행한 다음 조건에 따라 명령문을 실행하는 반복문
+	// int connection = 0;
+	// do
+	// {
+	// 	printf("Connection...");
+	// }
+	// while (connection > 0);
+
+#pragma endregion
+
+#pragma region continue문
+	// 해당 조건문만 실행되지 않고 반복문은 이어서 실행하는 제어문
+	// for (int i = 1; i <= 10; i++)
+	// {
+	// 	if (i % 3 == 0) continue;
+	// 	printf("%d\n",i);
+	// }
+
+#pragma endregion
+
+#pragma region 단축 평가 계산
+	// 계산을 진행하는 도중에 결과가 이미 확정된 경우 나머지 계산하는 과정을 생략하는 평가
+	// int x = 0;
+	// int y = 0;
+	// int z = 0;
+	// if (x == 0 && y++)
+	// {
+	// 	printf("Short Circuit\n");
+	// }
+	// if (z != 0 || y++)
+	// {
+	// 	printf("OR Operator\n");
+	// }
+	// printf("y의 값 : %d\n", y);
+
+#pragma endregion
+
+#pragma region (2)중 for문
+	// for (int i = 0; i < 3; i++)
+	// {
+	// 	printf("i의 값 : %d\n", i);
+	// 	for (int j = 0; j < 3; j++)
 	// 	{
-	// 		printf("★");
+	// 		printf("j의 값 : %d\n", j);
 	// 	}
 	// 	printf("\n");
 	// }
 
 #pragma endregion
-
-#pragma region 포인터
-	// 메모리의 주소 값을 저장할 수 있는 변수
-	
-	// int x = 10;
-	// int* pointer = &x;
-	// *pointer = 99;
-	// printf("x의 값 : %d\n", x);
-	// printf("x의 주소 값 : %p\n", &x);
-	// printf("pointer의 값 : %p\n", pointer);
-	// printf("pointer의 주소 값 : %p\n", &pointer);
-	
-	// 포인터 변수도 자신의 메모리 공간을 가지고 있으며,
-	// 포인터 변수에 변수의 주소를 저장하게 되면 해당 변수의 시작 주소를 가리키게 됨
-
-	// float health = 100.0f;
-	// pointer = &health;
-	// *pointer = 15.5f;
-	// printf("health의 값 : %f\n", health);
-
-	// 포인터 변수를 저장하기 위해 주소 값을 지정할 변수의 자료형과
-	// 포인터 변수의 자료형이 일치해야 함
-
-	// printf("포인터 변수의 크기 : %u\n", sizeof(pointer));
-
-	// 포인터 변수의 크기는 중앙 처리 장치가 한 번에 처리할 수 있는 크기로 정해지며,
-	// 한 번에 처리할 수 있는 크기는 운영 체제에 따라 크기가 결정됨
-
-#pragma endregion
-
-#pragma region 범용 포인터
-	// 자료형이 정해지지 않은 상태로 모든 자료형을 저장할 수 있는 포인터
-	// void* p = NULL;
-	// char alphabet = 'A';
-	// int integer = 10;
-	// float decimal = 5.5f;
-
-	// 범용 포인터로 변수의 메모리에 접근하려면 범용 포인터가 가리키는
-	// 변수의 자료형으로 형 변환을 해주어야 한다
-
-	// p = &alphabet;
-	// *(char*)p = 'B';
-	// p = &integer;
-	// *(int*)p = 15;
-	// p = &decimal;
-	// *(float*)p = 3.25f;
-	// printf("alphabet의 값 : %c\n", alphabet);
-	// printf("integer의 값 : %d\n", integer);
-	// printf("decimal의 값 : %f\n", decimal);
-	
-	// 범용 포인터는 메모리 주소에 접근해서 값을 변경할 수 없다
-
-
-#pragma endregion
-
-#pragma region 상수 지시 포인터
-	int vectorX = 10;
-	int vectorY = 20;
-	const int* ptr = &vectorX;
-	printf("ptr 변수가 가리키는 값 : %d\n", *ptr);
-	ptr = &vectorY;
-	printf("ptr 변수가 가리키는 값 : %d\n", *ptr);
-
-	// 상수 지시 포인터를 선언하게 되면 포인터 변수가 가리키고 있는 주소에
-	// 존재하는 값을 변경할 수 없도록 설정할 수 있다
-	
-#pragma endregion
-
-#pragma region 포인터 상수
-
-	// int positionX = 5;
-	// int positionY = 0;
-	// int* const reference = &positionX;
-	// *reference = 10;
-
-	// 포인터 상수는 해당 변수의 값을 변경할 수 있지만 다른 메모리 주소를 저장할 수 없다
 
 #pragma endregion
 

@@ -1,1 +1,2 @@
-﻿  Class10th (Function).vcxproj -> C:\Users\littl\Desktop\SBSGameAcademy\Program\x64\Debug\Class10th (Function).exe
+﻿  Source.c
+C:\Users\littl\Desktop\SBSGameAcademy\Class10th (Function)\Source.c(3,10): error C1083: 포함 파일을 열 수 없습니다. 'Calculator.h': No such file or directory
